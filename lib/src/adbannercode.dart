@@ -11,14 +11,13 @@ class Adbannercode extends StatelessWidget {
   static BannerAd createBannerAd() {
     BannerAd adBanner = BannerAd(
       size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3511968554265090/6761108640',
+      adUnitId: 'ca-app-pub-3511968554265090~1694533384',
       listener: BannerAdListener(
-        onAdLoaded: (ad) => const SnackBar(
-            content: Text('Ad loaded'), duration: Duration(seconds: 3)),
-        onAdFailedToLoad: (ad, error) => SnackBar(
-            content: Text('Ad display failed: $error'),
-            duration: const Duration(seconds: 3)),
-      ),
+          onAdLoaded: (ad) => print('Ad loaded'),
+          onAdFailedToLoad: (ad, error) {
+            ad.dispose();
+            createBannerAd();
+          }),
       request: const AdRequest(),
     );
     adBanner.load();
@@ -28,13 +27,13 @@ class Adbannercode extends StatelessWidget {
   static BannerAd createFullBannerAd() {
     BannerAd adBanner = BannerAd(
       size: AdSize.fullBanner,
-      adUnitId: 'ca-app-pub-3511968554265090/6761108640',
+      adUnitId: 'ca-app-pub-3511968554265090~1694533384',
       listener: BannerAdListener(
-        onAdLoaded: (ad) => const SnackBar(
-            content: Text('Ad loaded'), duration: Duration(seconds: 3)),
-        onAdFailedToLoad: (ad, error) => SnackBar(
-            content: Text('Ad display failed: $error'),
-            duration: const Duration(seconds: 3)),
+        onAdLoaded: (ad) => print('Ad loaded'),
+        onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+          createFullBannerAd();
+        },
       ),
       request: const AdRequest(),
     );
@@ -45,14 +44,13 @@ class Adbannercode extends StatelessWidget {
   static BannerAd createLargeBannerAd() {
     BannerAd adBanner = BannerAd(
       size: AdSize.largeBanner,
-      adUnitId: 'ca-app-pub-3511968554265090/6761108640',
+      adUnitId: 'ca-app-pub-3511968554265090~1694533384',
       listener: BannerAdListener(
-        onAdLoaded: (ad) => const SnackBar(
-            content: Text('Ad loaded'), duration: Duration(seconds: 3)),
-        onAdFailedToLoad: (ad, error) => SnackBar(
-            content: Text('Ad display failed: $error'),
-            duration: const Duration(seconds: 3)),
-      ),
+          onAdLoaded: (ad) => print('Ad loaded'),
+          onAdFailedToLoad: (ad, error) {
+            ad.dispose();
+            createLargeBannerAd();
+          }),
       request: const AdRequest(),
     );
     adBanner.load();
@@ -62,14 +60,13 @@ class Adbannercode extends StatelessWidget {
   static BannerAd createFluidBannerAd() {
     BannerAd adBanner = BannerAd(
       size: AdSize.fluid,
-      adUnitId: 'ca-app-pub-3511968554265090/6761108640',
+      adUnitId: 'ca-app-pub-3511968554265090~1694533384',
       listener: BannerAdListener(
-        onAdLoaded: (ad) => const SnackBar(
-            content: Text('Ad loaded'), duration: Duration(seconds: 3)),
-        onAdFailedToLoad: (ad, error) => SnackBar(
-            content: Text('Ad display failed: $error'),
-            duration: const Duration(seconds: 3)),
-      ),
+          onAdLoaded: (ad) => print('Ad loaded'),
+          onAdFailedToLoad: (ad, error) {
+            ad.dispose();
+            createFluidBannerAd();
+          }),
       request: const AdRequest(),
     );
     adBanner.load();

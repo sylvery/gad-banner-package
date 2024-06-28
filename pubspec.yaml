@@ -1,6 +1,6 @@
 name: gad_banner_package
 description: "Package for display Google Ads for Banner, Full Banner, Fluid Banner and Large Banner"
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/sylvery/gad-banner-package
 
 environment:
